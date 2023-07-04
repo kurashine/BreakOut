@@ -1,0 +1,169 @@
+/* Устанавливаем базовые стили для всего документа */
+html {
+  height: 100%;
+  --ball-color: #ff0000;
+  --paddle-color: #ffffff;
+  --text-color: #ecf0f1;
+  --action-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Сбрасываем отступы, рамки и padding для всех элементов */
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+}
+
+/* Устанавливаем базовые стили для body */
+body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url(../public/cursor.png), default;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background-image: no-repeat;
+}
+
+/* Устанавливаем высоту 100% для #root */
+#root {
+  height: 100%;
+}
+
+/* Стилизуем основную страницу */
+.page {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+}
+
+/* Центрируем контент на странице */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Контейнер для игровой сцены */
+.scene-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../src/components/background.jpg);
+  background-size: 100%;
+}
+
+/* Игровая сцена */
+.scene {
+  border: 2px solid var(--text-color);
+}
+
+/* Блоки, из которых состоит игра */
+.block {
+  stroke-width: 1px;
+  stroke: var(--text-color);
+}
+
+/* Шарик */
+.ball {
+  fill: var(--ball-color);
+}
+
+/* Платформа */
+.paddle {
+  fill: var(--paddle-color);
+}
+
+/* Уровень игры */
+.level {
+  font-family: 'Unbounded', cursive;
+  fill: var(--text-color);
+}
+
+/* Сердечки */
+.life {
+  width: 100%;
+  height: 100%;
+}
+
+/* Контейнер для меню */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: url("../public/background3.jpg");
+  background-size: 100%;
+}
+
+/* Логотип */
+.logo {
+  font-size: 100px;
+  font-weight: normal;
+  text-shadow: 0 0 0 rgba(255, 255, 255, 0.466);
+  color: transparent;
+  animation: shadows 4s infinite ease-in;
+  margin: 150px;
+  font-family: 'Sigmar', cursive;
+}
+
+/* Меню */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #EEDDFF;
+  border: 6px solid #7922CC;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+  opacity: 0.3;
+}
+
+.menu-item:hover {
+  background-color: #555555;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.setting {
+  margin-bottom: 10px;
+}
+
+.setting label {
+  font-size: 16px;
+  color: #333333;
+}
+
+.setting input[type="color"] {
+  width: 40px;
+  height: 30px;
+  border: none;
+  outline: none;
+}

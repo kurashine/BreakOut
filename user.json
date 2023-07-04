@@ -1,0 +1,10 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"breakout_amb"},
+{"type":"table","name":"user","database":"breakout_amb","data":
+[
+{"userID":"1","name":"Jenya","age":"12","score":"32"},
+{"userID":"2","name":"Andrey","age":"7","score":"11"}
+]
+}
+]

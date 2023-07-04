@@ -1,15 +1,16 @@
 /* Устанавливаем базовые стили для всего документа */
 html {
   height: 100%;
-  --ball-color: #ff0000;
-  --paddle-color: #ffffff;
+  --ball-color: #ffffff;
+  --paddle-color: #000000;
   --text-color: #ecf0f1;
   --action-color: #ffffff;
+  --font-size: 30px;
   overflow: hidden;
+  cursor: url(../public/cursor.png), default;
 }
 
 /* Сбрасываем отступы, рамки и padding для всех элементов */
-
 * {
   box-sizing: border-box;
   outline: 0;
@@ -25,13 +26,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url(../public/cursor.png), default;
+
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
+
   user-select: none;
-  background-image: no-repeat;
+  background-image: none;
 }
+
+
 
 /* Устанавливаем высоту 100% для #root */
 #root {
@@ -42,7 +46,9 @@ body {
 .page {
   width: 100%;
   height: 100%;
-  background-size: 100% 100%;
+  background-size: cover;
+  padding: auto;
+
 }
 
 /* Центрируем контент на странице */
@@ -53,7 +59,7 @@ body {
   justify-content: center;
   height: 100%;
   width: 100%;
-  cursor: pointer;
+
 }
 
 /* Контейнер для игровой сцены */
@@ -63,13 +69,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../src/components/background.jpg);
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: none !important;
 }
 
 /* Игровая сцена */
 .scene {
-  border: 2px solid var(--text-color);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+
 }
 
 /* Блоки, из которых состоит игра */
@@ -81,6 +90,7 @@ body {
 /* Шарик */
 .ball {
   fill: var(--ball-color);
+  filter: contrast(100%);
 }
 
 /* Платформа */
@@ -92,6 +102,7 @@ body {
 .level {
   font-family: 'Unbounded', cursive;
   fill: var(--text-color);
+  font-size: 30px;
 }
 
 /* Сердечки */
@@ -108,19 +119,20 @@ body {
   justify-content: center;
   height: 100%;
   width: 100%;
-  background: url("../public/background3.jpg");
-  background-size: 100%;
+  background-image: url("images/main.jpg");
+  background-size: cover;
 }
 
 /* Логотип */
 .logo {
-  font-size: 100px;
-  font-weight: normal;
-  text-shadow: 0 0 0 rgba(255, 255, 255, 0.466);
-  color: transparent;
-  animation: shadows 4s infinite ease-in;
-  margin: 150px;
-  font-family: 'Sigmar', cursive;
+  background-image: url('./logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  position: relative;
+  width: 1000px;
+  height: 2000px;
+  margin: 50px 0 50px 200px;
 }
 
 /* Меню */
@@ -128,42 +140,399 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px 0 100px 0;
 }
 
 .menu-item {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #EEDDFF;
-  border: 6px solid #7922CC;
-  border-radius: 25px;
+  display: block;
+  font-family: 'Underdog', cursive;
+  padding: 12px 20px;
+  font-weight: bold;
+  color: rgb(27, 27, 27);
+  background-color: rgba(255, 255, 255, 0.5);
+  /* border: 3px solid #000; */
+  /* background-color: rgba(255, 255, 255, 0.7); */
   margin-bottom: 10px;
-  transition: background-color 0.3s;
-  opacity: 0.3;
+  transition: border 1s;
+  border-radius: 20px;
+  font-size: 42px;
 }
 
 .menu-item:hover {
-  background-color: #555555;
+  text-shadow: rgb(151, 132, 255) 1px 0 10px;
+  border-collapse: collapse;
+
 }
 
 .settings {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 100px;
+  font-weight: 750;
+  width: 600px;
+  height: 600px;
+  padding: 20px;
+  margin-bottom: 200px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: 'Underdog', cursive;
+  font-size: var(--font-size);
+}
+
+.settings h2 {
+  margin: 50px 0 120px 0;
+  text-align: center;
+  font-size: 70px;
 }
 
 .setting {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
 }
 
 .setting label {
-  font-size: 16px;
-  color: #333333;
+  font-size: var(--font-size);
+  color: #333333c0;
+  padding: 5px 10px;
+
 }
 
-.setting input[type="color"] {
-  width: 40px;
-  height: 30px;
+.setting input[type="color"],
+.setting input[type='number'] {
+  width: 54px;
+  height: 40px;
   border: none;
   outline: none;
+  border-radius: 5px;
+}
+
+.setting input[type="range"] {
+  width: 150px;
+  height: 50px;
+}
+
+.setting select {
+  width: 130px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Underdog', cursive;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+
+.full-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.create-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-weight: 750;
+  width: 600px;
+  font-size: 20px;
+  height: 600px;
+  padding: 30px 0 20px 0;
+  margin-bottom: 100px;
+  box-sizing: border-box;
+  /* text-align: center; */
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: 'Underdog', cursive;
+}
+
+.create-player h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 70px;
+}
+
+.create-user {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  font-weight: 500;
+  width: 400px;
+  height: 70px;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  border: 1px solid #000;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  font-size: 30px;
+  border-radius: 10px;
+  font-family: 'Underdog', cursive;
+
+}
+
+.create-user:hover {
+  border: 2px solid black;
+  border-color: rgb(255, 255, 255);
+}
+
+
+.create-user::placeholder {
+  font-size: 35px;
+}
+
+
+.create-level {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-left: 80px;
+  padding-top: 30px;
+
+}
+
+.create-level label {
+  font-size: var(--font-size);
+  color: #333333c0;
+  padding: 5px 10px;
+}
+
+
+.create-level select {
+  width: 200px;
+  height: 40px;
+  font-size: 28px;
+  font-weight: 500;
+  font-family: 'Underdog', cursive;
+  border-radius: 5px;
+  margin-top: 5px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.create-level select:hover {
+  /* font-size: 32px; */
+  border-color: rgb(255, 255, 255);
+}
+
+.contine {
+  display: block;
+  font-family: 'Underdog', cursive;
+  padding: 10px 20px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #222;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 90px;
+  transition: background-color 2s;
+  border-radius: 10px;
+  cursor: default;
+}
+
+.contine:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.menu-item-back {
+  background: none;
+  font-size: 66px;
+
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  display: block;
+  /* width: 200px; */
+  /* height: 50px; */
+  border: none;
+  /* margin-bottom: 20px; */
+  font-family: 'Underdog', cursive;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.menu-item-back:hover {
+  font-size: 70px;
+
+}
+
+.help {
+  width: 1000px;
+  height: 900px;
+  padding: 50px;
+  margin-bottom: 100px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  overflow-y: scroll;
+}
+
+.help-text {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: justify-all;
+  font-family: 'Underdog', cursive;
+}
+
+.help-text h1 {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 30px 0 30px 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 44px;
+
+}
+
+.help-text h2 {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 30px 0 30px 0;
+  margin: 60px 0 60px 0;
+  text-align: center;
+  font-size: 44px;
+}
+
+
+.help-text h3 {
+  margin: 40px 0 15px 0;
+  text-align: center;
+  font-size: 33px;
+  font-weight: 800;
+
+}
+
+.help-text p {
+  text-indent: 40px;
+  font-size: 24px;
+}
+
+.help::-webkit-scrollbar {
+  width: 15px;
+  background-color: #f9f9fd00;
+}
+
+.help::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.help::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #f9f9fd00;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-weight: 750;
+  width: 600px;
+  font-size: 20px;
+  height: 800px;
+  padding: 30px 0 20px 0;
+  margin-bottom: 100px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: 'Underdog', cursive;
+  font-size: var(--font-size);
+  overflow-y: auto;
+
+}
+
+.rating h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 60px;
+}
+
+.rating table {
+  padding: 10px;
+  height: 400px;
+  width: 560px;
+  border-collapse: collapse;
+
+}
+
+.rating th {
+  padding: 10px;
+
+}
+
+.rating tr {
+  padding: 10px;
+
+}
+
+.rating td {
+  height: 50px;
+  width: 300px;
+  border: 1px solid rgb(0, 0, 0, 0.6);
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.rating::-webkit-scrollbar {
+  width: 15px;
+  background-color: #f9f9fd00;
+}
+
+.rating::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.rating::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #f9f9fd00;
+}
+
+.clear-database {
+  display: block;
+  font-family: 'Underdog', cursive;
+  padding: 10px 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 50px;
+  width: 200px;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+.clear-database:hover {
+  border: 3px solid rgb(255, 255, 255);
 }

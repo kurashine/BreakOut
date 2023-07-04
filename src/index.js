@@ -1,5 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Page from './components/page';
+import React from 'react'
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(<Page />, document.getElementById('root'));
+
+import './index.css'
+import Page from './components/page'
+import * as serviceWorker from './serviceWorker'
+
+createRoot(document.getElementById('root')).render(<Page />);
+
+
+serviceWorker.unregister();

@@ -2,29 +2,29 @@ import React from 'react';
 import { getRange } from '../utils';
 
 const Lives = ({ lives, containerWidth, unit }) => {
-  const width = unit * 2;
+  const heartSize = unit * 1.5;
   const heartStyle = {
-    fill: '#e91e63',
+    fill: '#ff0000',
     stroke: '#333',
     strokeWidth: 2,
   };
-  return getRange(lives).map(i => (
+  return getRange(lives).map((i) => (
     <svg
       className='life'
       viewBox="0 0 512 512"
-      width={width}
-      height={unit}
-      x={containerWidth - unit - width * (i + 1) - (unit / 2) * i}
+      width={heartSize}
+      height={heartSize}
+      x={containerWidth - unit - heartSize * (i + 1) - (unit / 2) * i}
       y={unit}
       key={i}
     >
       <path
         style={heartStyle}
-        d="M402.2,51.6c-41.5-41.5-108.9-41.5-150.4,0L256,90.5l-16.7-16.7
-          c-41.5-41.5-108.9-41.5-150.4,0c-41.5,41.5-41.5,108.9,0,150.4l16.7,16.7L256,421.7l134.7-134.7l16.7-16.7
-          C443.7,160.5,443.7,93.1,402.2,51.6z"
+        d="M256,51.6c-47.8-48.6-125.5-48.6-173.3,0c-47.8,48.6-47.8,127.4,0,176.1l173.3,176.1L429.3,227.7
+        C481.1,179,481.1,100.2,433.3,51.6C385.6,3,306.8,3,256,51.6z"
       />
     </svg>
-  ))
+  ));
 };
+
 export default Lives;

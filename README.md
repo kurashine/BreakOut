@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+Інструкція користувача для відеогри «Break Out»:
+1. Запуск гри:
+   - Відкрийте веб-браузер і завантажте веб-сторінку, на якій розміщена гра.
+   - Переконайтеся, що на вашому комп'ютері встановлено актуальну версію браузера та підключення до Інтернету.
+   - Натисніть на кнопку «Грати».
+2. Головне меню:
+   - Після запуску гри відобразиться головне меню.
+   - У головному меню ви можете знайти налаштування, довідку, рейтинг та почати нову гру.
+   - Використовуйте клавіатуру, щоб взаємодіяти з елементами меню.
+   - Щоб розпочати нову гру, натисніть кнопку «Грати».
+- Після натискання кнопки «Грати» відобразится «Створення нового гравця»
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 
+![image](https://github.com/kurashine/BreakOut/assets/76958599/01920a89-06ff-47aa-babe-7cae5027aab8)
 
-## Available Scripts
 
-In the project directory, you can run:
+3. Гра:
+   - Після натискання кнопки "Продовжити" відобразиться ігрове поле.
 
-### `npm start`
+ 
+![image](https://github.com/kurashine/BreakOut/assets/76958599/1deb6573-f8fe-4486-a317-8be74da2160b)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - Ваша мета - ударяти кульку за допомогою платформи так, щоб вона знищувала блоки у верхній частині екрана.
+   - Керуйте платформою за допомогою клавіш зі стрілками на клавіатурі.
+   - Намагайтеся не дозволяти кульці впасти поза межі поля, відбиваючи її від платформи.
+   - Кожні 3 секунди вам нараховується певна кількість очок.
+   - Спробуйте набрати якомога більше очок та досягти максимального рівня.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/kurashine/BreakOut/assets/76958599/289c661e-8f90-4e45-acf7-69f76e012d1c)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Результати гри:
+   - Коли гра закінчується, відобразиться модуль рейтингу.
+   - У модулі результатів ви побачите свій рахунок, досягнення або іншу статистику гри.
+   - Ви можете почати нову гру, натиснувши відповідну кнопку, або повернутися до головного меню.
+  
+   
+![image](https://github.com/kurashine/BreakOut/assets/76958599/2d6f51c3-a466-4edd-a8d3-33602a22b1c1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Налаштування:
+   - Якщо ви бажаєте змінити налаштування гри, ви можете знайти їх у головному меню.
+   - Налаштування можуть включати складність гри, кольори елементів, розмір тексту або інші параметри.
+   - Зміни в налаштуваннях зберігаються і впливають на гру після їх застосування.
 
-### `npm run eject`
+ 
+![image](https://github.com/kurashine/BreakOut/assets/76958599/e75e923c-4d97-4037-b2ef-344a93783008)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. Завершення гри:
+- У будь-який момент гри ви можете закрити веб-сторінку, щоб завершити гру.
+7. Довідка:
+- Відображення документації програмного продукту, а саме: мета гри, управління грою, рівні складності, рекомендації щодо використання гри, попередження та застереження.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![image](https://github.com/kurashine/BreakOut/assets/76958599/1ef8c9aa-a51a-4028-9cc5-84c641d93aba)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Інструкція програміста
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Інструкція програміста для розробки відеогри «Break Out»:
+1. Підготовка середовища розробки:
+   - Встановіть актуальну версію Node.js на своєму комп'ютері.
+   - Створіть новий проект React з використанням команди «npx create-react-app my-game».
+   - Перейдіть у папку проекту за допомогою команди «cd my-game».
+2. Структура проекту:
+   - У папці проекту знайдіть файли «App.js», «index.js» та інші стандартні файли, що створені автоматично.
+   - Створіть нові папки, які будуть використовуватись для компонентів гри, наприклад, «components», «assets» і т.д.
+   - Розгляньте розподіл функціоналу гри на окремі компоненти, такі як "Головне меню", «Ігрове поле», «Платформа», «Куля», «Блоки» тощо, і створіть відповідні компоненти у папці `components`.
+3. Розробка компонентів:
+   - Для кожного компонента визначте його структуру, включаючи HTML-розмітку та стилізацію.
+   - Визначте стан компонента, який буде зберігати необхідну інформацію для гри, наприклад, позицію платформи, координати кулі, стан блоків тощо.
+   - Реалізуйте функціонал компонента, такий як рух платформи, рух кулі, взаємодія з блоками.
+   - Використовуйте властивості (props) для передачі даних між компонентами, наприклад, передача результатів гри з компонента «Ігрове поле» до компонента «Результати».
+4. Реалізація головного меню:
+   - Створіть компонент «Головне меню», який буде містити кнопки для початку нової гри, налаштувань та інших опцій.
+   - Додайте логіку обробки подій натискання на кнопки, наприклад, обробка події «Нова гра» викличе початок нової гри, а подія «Налаштування» відкриє вікно налаштувань.
+5. Реалізація ігрового поля:
+   - Створіть компонент «Ігрове поле», яке буде містити графічне представлення ігрового поля.
+   - Розробіть логіку гри, таку як рух платформи, рух кулі, зіткнення з блоками.
+   - Використайте HTML-елементи або сторонні бібліотеки для візуалізації елементів гри, таких як блоки, платформа та куля.
+6. Реалізація логіки гри:
+   - Визначте правила гри, такі як зарахування очків, кінець гри при досягненні певних умов тощо.
+   - Реалізуйте логіку обробки взаємодії елементів гри, наприклад, визначення колізій та їх наслідків.
+7. Налаштування гри:
+   - Реалізуйте можливість змінювати налаштування гри, такі як складність, кольори елементів, швидкість тощо.
+   - Забезпечте збереження налаштувань та їх використання під час гри.
+8. Тестування:
+   - Перевірте правильність роботи гри, переконайтеся, що всі компоненти працюють належним чином і взаємодіють один з одним.
+   - Виявлені помилки виправляйте та перевіряйте їх відсутність.
+9. Розгортання:
+   - Після успішного тестування гри, підготуйте її для розгортання на веб-сервері.
+   - Використовуйте засоби ReactJS для збірки проекту в продакшн-режимі та отримання готових файлів для розгортання.
+   - Розгорніть готову гру на веб-сервері або іншому хостинг-сервісі.
+10. Підтримка та розширення:
+    - Після розгортання гри надайте користувачам можливість зворотного зв'язку та повідомлення про помилки.
+    - Відстежуйте реакцію користувачів та можливі проблеми, щоб вносити відповідні виправлення та поліпшення.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
